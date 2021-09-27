@@ -10,7 +10,7 @@ import { useEffect, useState, useCallback } from "react";
 export default function useScrollBreakpoint({
   breakpoint = 0,
   id = "",
-  onScroll: scrollCallback = (scrollTop) => {},
+  onScroll: scrollCallback = (scrollTop: number) => {},
 } = {}) {
   const [isPass, setPass] = useState(breakpoint < 0);
 

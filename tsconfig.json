@@ -1,16 +1,21 @@
 {
   "compilerOptions": {
-    "allowJs": true, // Allow JavaScript files to be compiled
-    "skipLibCheck": true, // Skip type checking of all declaration files
-    "module": "esnext", // Specify module code generation
-    "moduleResolution": "node", // Resolve modules using Node.js style
-    "isolatedModules": true, // Unconditionally emit imports for unresolved files
-    "resolveJsonModule": true, // Include modules imported with .json extension
-    "noEmit": true, // Do not emit output (meaning do not compile code, only perform type checking)
-    "jsx": "react", // Support JSX in .tsx files
-    "allowSyntheticDefaultImports": true, // Generate corresponding .map file
-    "sourceMap": true, // Generate corresponding .map file
-    "declaration": true, // Generate corresponding .d.ts file
+    "types": [
+      "vite/client"
+    ],
+    "allowJs": false,
+    "skipLibCheck": false,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "declaration": true,
+    "emitDeclarationOnly": true,
     "outDir": "./lib"
   },
   "include": [
