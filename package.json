@@ -1,6 +1,6 @@
 {
   "name": "use-scroll-breakpoint",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "react-hooks, an fancy way to get the relation between element.scrollTop and breakpoint",
   "main": "lib/index.es.js",
   "scripts": {
