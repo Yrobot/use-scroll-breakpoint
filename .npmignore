@@ -1,4 +1,7 @@
 rollup.config.js
-.babelrc
+.gitignore
+node_modules
 src/**
 yarn.lock
+tsconfig.json
+vite.config.ts

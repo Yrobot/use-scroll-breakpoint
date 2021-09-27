@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from "react";
 /**
  * @description listen the dom.onScroll, return breakpoint < scrollTop
  * @author Yrobot
@@ -7,7 +7,11 @@ import { useEffect, useState, useCallback } from 'react';
  * @param {*} [{ breakpoint = 0, id = '', onScroll: scrollCallback = () => {} }={}]
  * @return {*}  [breakpoint < scrollTop]
  */
-export default function useScrollBreakpoint({ breakpoint = 0, id = '', onScroll: scrollCallback = () => {} } = {}) {
+export default function useScrollBreakpoint({
+  breakpoint = 0,
+  id = "",
+  onScroll: scrollCallback = (scrollTop) => {},
+} = {}) {
   const [isPass, setPass] = useState(breakpoint < 0);
 
   const onScroll = useCallback((e) => {
@@ -17,7 +21,9 @@ export default function useScrollBreakpoint({ breakpoint = 0, id = '', onScroll:
     if (scrollTop === undefined) scrollTop = e?.target?.scrollTop;
     // if cant get scrollTop, warn on console
     if (scrollTop === undefined) {
-      console.warn(`useScrollBreakpoint.onScroll.event: scrollTop is undefined`);
+      console.warn(
+        `useScrollBreakpoint.onScroll.event: scrollTop is undefined`
+      );
       return;
     }
     // callback from params
@@ -31,9 +37,9 @@ export default function useScrollBreakpoint({ breakpoint = 0, id = '', onScroll:
     // set the listener, if pass id, listen the dom, or listen window
     const listenElement = (id && document.getElementById(id)) || window;
     // listen onScroll
-    listenElement.addEventListener('scroll', onScroll);
+    listenElement.addEventListener("scroll", onScroll);
     // unlisten
-    return () => listenElement.removeEventListener('scroll', onScroll);
+    return () => listenElement.removeEventListener("scroll", onScroll);
   }, []);
   return [isPass];
 }
